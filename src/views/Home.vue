@@ -2,18 +2,6 @@
   <div class="home">
     <canvas id="sakura" />
     <div class="content">
-      <div class="home-header">
-        <router-link
-          class="link"
-          to="/"
-        >
-          <img
-            class="home-logo"
-            src="../assets/userLogo.jpeg"
-            alt="biaochenxuying logo"
-          />
-        </router-link>
-      </div>
       <div class="home-body">
         <div class="list">
           <router-link
@@ -28,46 +16,6 @@
           >
             项目
           </router-link>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            class="link"
-            href="https://github.com/biaochenxuying"
-          >
-            github
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            class="link"
-            href="https://juejin.im/user/591d6b4d0ce463006926ae40"
-          >
-            掘金
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            class="link"
-            href="https://www.zhihu.com/people/mo-xu-ming-53/posts"
-          >
-            知乎
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            class="link"
-            href="https://segmentfault.com/u/biaochenxuying"
-          >
-            segmentfault
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            class="link"
-            href="https://www.jianshu.com/u/91717b553bfd"
-          >
-            简书
-          </a>
         </div>
         <div class="introduce"> 时光正好，未来可期，加油 ！ </div>
       </div>
@@ -83,14 +31,14 @@ export default defineComponent({
   name: "Home",
   setup() {
     onMounted(() => {
-      if (document.location.protocol === "http:") {
-        ElMessage({
-          message:
-            "本网站已经配置了 https，为了有更好的体验效果，请把地址前缀换成 https 哦",
-          type: "warning",
-          duration: 3000,
-        });
-      }
+      // if (document.location.protocol === "http:") {
+      //   ElMessage({
+      //     message:
+      //       "本网站已经配置了 https，为了有更好的体验效果，请把地址前缀换成 https 哦",
+      //     type: "warning",
+      //     duration: 3000,
+      //   });
+      // }
       let sakura_point_vsh: string = `
     uniform mat4 uProjection;
     uniform mat4 uModelview;
