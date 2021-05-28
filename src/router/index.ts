@@ -14,7 +14,7 @@ const routes: Array<RouteRecordRaw> = [
         component: HelloWorld,
     },
     {
-      path: "/",
+      path: "/articles",
       name: "articles",
       // route level code-splitting
       // this generates a separate chunk (articles.[hash].js) for this route
