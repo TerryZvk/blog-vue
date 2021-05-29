@@ -1,11 +1,9 @@
 
 <template>
   <div class="footer">
-    <div>全栈修炼 ©2018 Created by BiaoChenXuYing</div>
+    <div>Created by Tao</div>
     <div class="number">
-      <a href="http://www.beian.miit.gov.cn" target="_blank"
-        >粤ICP备18141506号</a
-      >
+      粤ICP备18141506号
     </div>
   </div>
 </template>
@@ -16,11 +14,19 @@ export default defineComponent({
   name: "Footer",
 });
 </script>
-<style scoped>
+<style scoped lang="less">
 .footer {
   text-align: center;
   padding: 20px;
   font-weight: bold;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .number {
+    color: #ada8a8;
+  }
 }
 </style>
 

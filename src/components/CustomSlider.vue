@@ -1,25 +1,5 @@
 <template>
   <div class="right slider">
-    <img
-      class="right-logo"
-      src="../assets/userLogo.jpeg"
-      alt=""
-    >
-    <div class="title">夜尽天明</div>
-    <div class="right-content">
-      <!-- <div class="item">
-        <div class="num">123</div>粉丝
-      </div>
-      <div class="item">
-        <div class="num">123</div>文章
-      </div>
-      <div class="item">
-        <div class="num">123</div>字数
-      </div>
-      <div class="item">
-        <div class="num">123</div>收获喜欢
-      </div> -->
-    </div>
     <div class="tags">
       <div class="title">标签云</div>
       <router-link
@@ -30,26 +10,6 @@
       >
         <span :key="item._id">{{item.name}}</span>
       </router-link>
-    </div>
-    <div class="introduce">
-      <div class="title">技术以内的 BB</div>
-      <div class="content">
-        <img
-          style="width:100%;"
-          src="../assets/BiaoChenXuYing.png"
-          alt="全栈修炼"
-        />
-      </div>
-    </div>
-    <div class="introduce">
-      <div class="title">开源项目的 BB</div>
-      <div class="content">
-        <img
-          style="width:100%;"
-          src="../assets/FrontEndGitHub.png"
-          alt="前端GitHub"
-        />
-      </div>
     </div>
   </div>
 </template>

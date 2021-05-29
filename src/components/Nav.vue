@@ -10,8 +10,8 @@
             <router-link to="/">
               <img
                 class="logo"
-                src="../assets/logo.jpg"
-                alt="BiaoChenXuYing"
+                src="../assets/logo.png"
+                alt="logo"
               >
             </router-link>
           </el-col>
@@ -47,13 +47,13 @@
                   v-if="!userInfo.avatar"
                   class="user-img"
                   src="../assets/user.png"
-                  alt="BiaoChenXuYing"
+                  alt="user"
                 >
                 <img
                   v-if="userInfo.avatar"
                   class="user-img"
                   :src="userInfo.avatar"
-                  alt="BiaoChenXuYing"
+                  alt="avatar"
                 >
                 <el-dropdown-menu slot="dropdown">
                   <el-dropdown-item command="logout">登 出</el-dropdown-item>
@@ -90,8 +90,8 @@
           <router-link to="/">
             <img
               class="logo fl"
-              src="../assets/logo.jpg"
-              alt="BiaoChenXuYing"
+              src="../assets/logo.png"
+              alt="logo"
             >
           </router-link>
         </div>
@@ -470,7 +470,7 @@ export default defineComponent({
     margin: 0 auto;
   }
   .logo {
-    height: 50px;
+    height: 55px;
     margin: 0;
     border-radius: 50%;
     margin-top: 5px;
