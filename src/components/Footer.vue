@@ -3,7 +3,7 @@
   <div class="footer">
     <div>Created by Tao</div>
     <div class="number">
-      粤ICP备18141506号
+      鄂ICP备2021011539号
     </div>
   </div>
 </template>
