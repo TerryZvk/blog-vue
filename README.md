@@ -1,6 +1,4 @@
-# myblog2.0
-## 个人博客2.0
-基于1.0做了一些调整
+# myblog
 
 ## Project setup
 ```
@@ -21,6 +19,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
