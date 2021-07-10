@@ -14,7 +14,7 @@
             <!-- this.$store.state.host -->
             <!-- action="http://www.vuebook.com/port/Userinfo/UploadImg" -->
             <el-upload class="avatar-uploader" action="Userinfo/UploadImg" :show-file-list="false" :on-success="handleAvatarSuccess" :before-upload="beforeAvatarUpload">
-              <img v-if="userInfoObj.avatar" src="./../../assets/img/tou.png" class="avatar" />
+              <img v-if="userInfoObj.avatar" src="./../../assets/img/avtar.jpeg" class="avatar" />
               <i v-else class="el-icon-plus avatar-uploader-icon"></i>
               <div slot="tip" class="el-upload__tip">点击上传头像，只能上传jpg/png文件，且不超过1mb</div>
             </el-upload>
@@ -66,7 +66,7 @@
             <!-- :action="this.$store.state.host+'Userinfo/UploadImg'" -->
             <!-- action="http://www.vuebook.com/port/Userinfo/UploadImg" -->
             <el-upload class="avatar-uploader" action="Userinfo/UploadImg" :show-file-list="false" :on-success="handleLogoSuccess" :before-upload="beforeLogoUpload">
-              <img v-if="userInfoObj.image" src="./../../assets/img/tou.jpg" class="avatar" />
+              <img v-if="userInfoObj.image" src="./../../assets/img/avtar.jpeg" class="avatar" />
               <i v-else class="el-icon-plus avatar-uploader-icon"></i>
               <div slot="tip" class="el-upload__tip">点击上传头像，只能上传jpg/png文件，且不超过1mb</div>
             </el-upload>
@@ -131,7 +131,7 @@
           <li class="avatarlist">
             <span class="leftTitle">网站logo</span>
             <div class="avatar-uploader">
-              <img src="./../../assets/img/tou.jpg" class="avatar" />
+              <img src="./../../assets/img/avtar.jpeg" class="avatar" />
             </div>
           </li>
         </ul>

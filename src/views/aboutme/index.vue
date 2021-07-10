@@ -7,19 +7,10 @@
       </div>
       <section class="aboutme-content">
         <p class="">
-          <img src="./../../assets/img/maoto.png" alt="" class="aboutmeImg">
+          <img src="https://avatars.githubusercontent.com/u/14146921?s=400&u=9fe4713ef4c18d1e417728be6809d0936f3b3aad&v=4" alt="" class="aboutmeImg">
         </p>
         <p class="aboutme-description">
-          欢迎来到Mango Ya！我是Aimee，是一个可爱的girl，前端程序媛，喜欢各种有趣的事物，爱好各种动手的小玩意儿
-        </p>
-        <p class="aboutme-description">
-          90后小美女😍，前端小萌新，
-        </p>
-        <p class="aboutme-description">
-          爱美食，爱动手做美食，想长胖的尽管来。
-        </p>
-        <p class="aboutme-description">
-          博客2018年1月23日更新到Vue
+          欢迎来到terryzvk.top！我是Terry
         </p>
       </section>
     </div>

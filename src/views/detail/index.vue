@@ -46,13 +46,13 @@
       <el-row :class="pdonate?'donate-body':'donate-body donate-body-show'" :gutter="30">
         <el-col :span="12" class="donate-item">
           <div class="donate-tip">
-            <img :src="detailObj.wechat_image?detailObj.wechat_image: 'static/img/tou.jpg'" />
+            <img :src="detailObj.wechat_image?detailObj.wechat_image: 'static/img/avtar.jpeg'" />
             <span>微信扫一扫，向我赞赏</span>
           </div>
         </el-col>
         <el-col :span="12" class="donate-item">
           <div class="donate-tip">
-            <img :src="detailObj.alipay_image?detailObj.alipay_image:'static/img/tou.jpg'" />
+            <img :src="detailObj.alipay_image?detailObj.alipay_image:'static/img/avtar.jpeg'" />
             <span>支付宝扫一扫，向我赞赏</span>
           </div>
         </el-col>

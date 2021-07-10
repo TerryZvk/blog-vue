@@ -16,7 +16,7 @@
       </div>
       <div class="h-information">
         <a href="#/Aboutme">
-          <img src="@/assets/img/tou.png" alt="">
+          <img src="@/assets/img/avtar.jpeg" alt="">
         </a>
         <h2 class="h-description">
           <a href="#/Aboutme">
@@ -110,7 +110,7 @@ export default {
   background-position: center 50%;
   background-repeat: no-repeat;
   margin-bottom: 90px;
-  background-image: url('./../../assets/img/headbg05.jpg');
+  background-image: url('./../../assets/img/headbg.jpg');
 }
 
 .h-information {

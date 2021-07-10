@@ -7,6 +7,7 @@
 
 <script>
 import Article from './../../components/article/index'
+import { getUsers } from '@/api/user/index'
 export default {
   name: 'Home',
   data () { //选项 / 数据
@@ -21,7 +22,9 @@ export default {
     Article
   },
   created () { //生命周期函数
-
+    getUsers().then((res) => {
+      console.log(res)
+    })
   }
 }
 </script>

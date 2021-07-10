@@ -9,7 +9,7 @@ export default new Vuex.Store({
     state () {
         return {
             name: 'aimee',
-            errorAvatar: 'this.onerror=null;this.src="' + require('./../assets/img/tou.jpg') + '"'
+            errorAvatar: 'this.onerror=null;this.src="' + require('./../assets/img/avtar.jpeg') + '"'
         }
     },
     actions,

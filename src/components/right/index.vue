@@ -115,28 +115,28 @@ export default {
       artCommentList: [
         {
           id: '1',
-          avatar: '../../assets/img/tou.jpg',
+          avatar: '../../assets/img/avtar.jpeg',
           nickname: 'aimee',
           title: 'dffffffff',
           content: 'fsdfsdfsdfsdfsdfsdfsdfsdf00'
         },
         {
           id: '2',
-          avatar: '../../assets/img/tou.jpg',
+          avatar: '../../assets/img/avtar.jpeg',
           nickname: 'aimee',
           title: 'dffffffff',
           content: 'fsdfsdfsdfsdfsdfsdfsdfsdf'
         },
         {
           id: '3',
-          avatar: '../../assets/img/tou.jpg',
+          avatar: '../../assets/img/avtar.jpeg',
           nickname: 'aimee',
           title: 'dffffffff',
           content: 'fsdfsdfsdfsdfsdfsdfsdfsdf'
         },
         {
           id: '4',
-          avatar: '../../assets/img/tou.jpg',
+          avatar: '../../assets/img/avtar.jpeg',
           nickname: 'aimee',
           title: 'dffffffff',
           content: 'fsdfsdfsdfsdfsdfsdfsdfsdf'
