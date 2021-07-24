@@ -6,7 +6,7 @@
     <span id="voice"></span>
     <div class="login_container">
       <el-form :label-position="labelPosition" :rules="rules" label-width="100px" :model="formLabelAlign">
-        <el-form-item v-if="isloginPage" label="用户名" prop="userName">
+        <el-form-item v-if="!isloginPage" label="用户名" prop="userName">
           <el-input v-model="formLabelAlign.userName" placeholder="请输入用户名"></el-input>
         </el-form-item>
         <el-form-item label="邮箱" prop="email">
@@ -27,6 +27,7 @@
   </div>
 </template>
 <script>
+  // import flvjs from 'flv.js'
   export default {
     data() {
       return {
@@ -37,7 +38,6 @@
           email: '',
           pwd: '',
         },
-        showVideo: false,
         rules: {
           userName: [
             { required: true, message: '用户名不能为空', trigger: 'blur'},
@@ -52,7 +52,7 @@
       };
     },
     created () {
-      if (this.$route.name === 'Login') {
+      if (this.$route.meta.title === '登录') {
         this.isloginPage = true
       } else {
         this.isloginPage = false
@@ -71,7 +71,19 @@
     },
     methods: {
       onSubmit() {
-      }
+      },
+      // createVideo() {
+      //   if (flvjs.isSupported()) {
+      //     const videoElement = document.getElementById('video');
+      //     const flvPlayer = flvjs.createPlayer({
+      //       type: 'flv',
+      //       url: 'http://qwrf3lzu4.hn-bkt.clouddn.com/bgHD.flv' 
+      //     })
+      //     flvPlayer.attachMediaElement(videoElement)
+      //     flvPlayer.load()
+      //     flvPlayer.play()
+      //   }
+      // }
     }
   }
 </script>
