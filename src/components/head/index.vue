@@ -110,7 +110,7 @@ export default {
   background-position: center 50%;
   background-repeat: no-repeat;
   margin-bottom: 90px;
-  background-image: url('./../../assets/img/headbg.jpg');
+  background-image: url('./../../assets/img/bg6.jpeg');
 }
 
 .h-information {

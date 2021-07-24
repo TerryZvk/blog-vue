@@ -3,39 +3,8 @@
     <section>
       <div class="r1-head">
         <img src="@/assets/img/headtou02.jpg" alt="">
-        <h1>
-          <span>女王</span>Aimee
-        </h1>
       </div>
       <div class="r1-body">
-        <p>你能抓到我么？</p>
-        <div class="catch-me">
-          <div class="">
-            <el-tooltip class="item" content="Github" placement="top">
-              <a :href="catchMeObj.git" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-            </el-tooltip>
-            <el-tooltip class="item" effect="dark" content="QQ" placement="top">
-              <a :href="catchMeObj.qq" target="_blank"><i class="fa fa-fw fa-qq"></i></a>
-            </el-tooltip>
-            <el-tooltip class="item" effect="dark" content="微博" placement="top">
-              <a :href="catchMeObj.sina" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
-            </el-tooltip>
-          </div>
-          <div class="">
-            <el-tooltip class="item" effect="dark" content="微信" placement="top">
-              <a :href="catchMeObj.wechat" target="_blank"><i class="fa fa-fw fa-wechat"></i></a>
-            </el-tooltip>
-            <el-tooltip class="item" effect="dark" content="CSDN" placement="top">
-              <a :href="catchMeObj.csdn" target="_blank"><i class="">C</i></a>
-            </el-tooltip>
-            <el-tooltip class="item" effect="dark" content="简历" placement="top">
-              <a :href="catchMeObj.job" target="_blank"><i class="fa fa-fw fa-file-word-o"></i></a>
-            </el-tooltip>
-            <el-tooltip class="item" effect="dark" content="更多" placement="top">
-              <a href="#/Aboutme"><i class="el-icon-more"></i></a>
-            </el-tooltip>
-          </div>
-        </div>
       </div>
     </section>
     <section :class="fixDo?'rs2 fixed':'rs2'" @click="lovemeFun">
@@ -144,15 +113,6 @@ export default {
       ],//评论量最多
       likeNum: 0,//do you like me 点击量
       initLikeNum: 0,//初始化喜欢数量
-      catchMeObj: {//抓住我 个人信息{
-        git: 'https://github.com/Aimee1608',
-        qq: 'static/img/aimee/QQ.jpg',
-        sina: 'https://weibo.com/u/2242812941',
-        wechat: 'static/img/aimee/erwm.jpg',
-        csdn: 'http://blog.csdn.net/Aimee1608',
-        job: 'http://aimee.mangoya.cn'
-
-      },
     }
   },
   computed: {

@@ -1,47 +1,12 @@
 <template>
   <div id="app">
-    <Head v-if="hidden" />
-    <div class="container">
-      <el-row :gutter="30">
-        <el-col :sm="24" :md="16" style="transition:all .5s ease-out;margin-bottom:30px;">
-          <router-view />
-        </el-col>
-        <el-col :sm="24" :md="8">
-          <Right />
-        </el-col>
-      </el-row>
-    </div>
-    <Foot />
+     <router-view />
   </div>
 </template>
 
 <script>
-import Head from './components/head/index'
-import Foot from './components/foot/index'
-import Right from './components/right/index'
 export default {
-  name: 'App',
-  data () {
-    return {
-      hidden: false
-    }
-  },
-  components: {
-    Head,
-    Foot,
-    Right
-  },
-  computed: {
-    
-  },
-  created () {
-
-    if (this.$router.name === 'Login') {
-      this.hidden = false
-    } else {
-      this.hidden = true
-    }
-  }
+  name: 'App'
 }
 </script>
 <style src="@/assets/css/reset.css"></style>
