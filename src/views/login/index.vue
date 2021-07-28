@@ -5,47 +5,48 @@
     </video>
     <span id="voice"></span>
     <div class="login_container">
-      <el-form :label-position="labelPosition" :rules="rules" label-width="100px" :model="formLabelAlign">
-        <el-form-item v-if="!isloginPage" label="用户名" prop="userName">
-          <el-input v-model="formLabelAlign.userName" placeholder="请输入用户名"></el-input>
+      <el-form :label-position="labelPosition" :rules="rules" label-width="100px" :model="form">
+        <el-form-item v-if="isloginPage" label="用户名" prop="username">
+          <el-input v-model="form.username" placeholder="请输入用户名"></el-input>
         </el-form-item>
-        <el-form-item label="邮箱" prop="email">
-          <el-input v-model="formLabelAlign.email" placeholder="请输入邮箱"></el-input>
+        <el-form-item v-if="!isloginPage" label="邮箱" prop="email">
+          <el-input v-model="form.email" placeholder="请输入邮箱"></el-input>
         </el-form-item>
-        <el-form-item label="密码" prop="pwd">
-          <el-input type="password" v-model="formLabelAlign.pwd" placeholder="请输入密码"></el-input>
+        <el-form-item label="密码" prop="password">
+          <el-input type="password" v-model="form.password" placeholder="请输入密码"></el-input>
         </el-form-item>
 
         <el-form-item v-if="isloginPage" class="tc">
-          <el-button class="submit_btn" size="large" type="primary" @click="onSubmit">登录</el-button>
+          <el-button class="submit_btn" size="large" type="primary" @click="handleLogin">登录</el-button>
         </el-form-item>
         <el-form-item v-else class="tc">
-          <el-button class="submit_btn" size="large" type="primary" @click="onSubmit">注册</el-button>
+          <el-button class="submit_btn" size="large" type="primary" @click="handleSignup">注册</el-button>
         </el-form-item>
       </el-form>
     </div>
   </div>
 </template>
 <script>
-  // import flvjs from 'flv.js'
+  import { login } from '@/api/login'
+  import { setToken } from '@/utils/cookies'
   export default {
     data() {
       return {
         labelPosition: 'right',
         isloginPage: true,
-        formLabelAlign: {
-          userName: '',
-          email: '',
-          pwd: '',
+        form: {
+          username: undefined,
+          email: undefined,
+          password: undefined
         },
         rules: {
-          userName: [
+          username: [
             { required: true, message: '用户名不能为空', trigger: 'blur'},
           ],
           email: [
             { required: true, message: '邮箱不能为空', trigger: 'blur'},
           ],
-          pwd: [
+          password: [
             { required: true, message: '密码不能为空', trigger: 'blur'},
           ]
         }
@@ -65,25 +66,19 @@
         voiceBtn.addEventListener('click', function() {
           video.muted = false
         })
-        document.querySelectorAll('input').forEach((item)=> {item.style.background='transparent'})
+        document.querySelectorAll('input').forEach((item)=> {item.style='background:transparent;color:#fff'})
         document.querySelectorAll('.el-form-item__label').forEach((item)=> {item.style.color='#fff'})
       })
     },
     methods: {
-      onSubmit() {
+      handleSignup () {
       },
-      // createVideo() {
-      //   if (flvjs.isSupported()) {
-      //     const videoElement = document.getElementById('video');
-      //     const flvPlayer = flvjs.createPlayer({
-      //       type: 'flv',
-      //       url: 'http://qwrf3lzu4.hn-bkt.clouddn.com/bgHD.flv' 
-      //     })
-      //     flvPlayer.attachMediaElement(videoElement)
-      //     flvPlayer.load()
-      //     flvPlayer.play()
-      //   }
-      // }
+      handleLogin () {
+        login(this.form).then(res => {
+          setToken(res.auth_token)
+          this.$router.push('/')
+        })
+      }
     }
   }
 </script>
