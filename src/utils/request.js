@@ -6,7 +6,7 @@ import { getToken } from "@/utils/cookies"
 
 // create an axios instance
 const service = axios.create({
-    baseURL: store.state.baseDomain, // http://localhost:21021/
+    baseURL: '/', // http://localhost:21021/
     // withCredentials: true, // send cookies when cross-domain requests
     //timeout: 5000 // request timeout
     //`xsrfCookieName`是要用作 xsrf 令牌的值的cookie的名称

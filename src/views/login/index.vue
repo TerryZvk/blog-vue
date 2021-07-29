@@ -27,8 +27,6 @@
   </div>
 </template>
 <script>
-  import { login } from '@/api/login'
-  import { setToken } from '@/utils/cookies'
   export default {
     data() {
       return {
@@ -74,9 +72,9 @@
       handleSignup () {
       },
       handleLogin () {
-        login(this.form).then(res => {
-          setToken(res.auth_token)
-          this.$router.push('/')
+        this.$store.dispatch('login/login', this.form).then(res => {
+          console.log(res)
+          this.$router.push({ path: '/', replace: true })
         })
       }
     }

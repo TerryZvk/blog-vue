@@ -7,7 +7,6 @@
 
 <script>
 import Article from '@/components/article/index'
-import { getArticles } from '@/api/article/index'
 export default {
   name: 'Home',
   data () { //选项 / 数据
@@ -22,9 +21,6 @@ export default {
     Article
   },
   created () { //生命周期函数
-    getArticles().then(() => {
-
-    })
   }
 }
 </script>

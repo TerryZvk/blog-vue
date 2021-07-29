@@ -8,6 +8,8 @@ import '@/assets/css/font-awesome.css'
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
+import '@/permission'
+
 new Vue({
   el: '#app',
   router,

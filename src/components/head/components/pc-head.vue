@@ -41,11 +41,14 @@
 </template>
 
 <script>
+import { getToken } from '@/utils/cookies'
 export default {
   name: 'PCHead',
-  props: ['activeIndex', 'classList', 'projectList', 'searchkey', 'haslogin'],
+  props: ['activeIndex', 'classList', 'projectList', 'searchkey'],
   data () {
-    return {}
+    return {
+      haslogin: getToken()
+    }
   },
   components: {},
   methods: {
@@ -58,7 +61,11 @@ export default {
          this.$router.push({ path: '/signup' })
       }
     },
-    userlogout () { }
+    userlogout () {
+      this.$store.dispatch('login/logout').then(() => {
+        this.$router.push({ path: '/login'})
+      })
+     }
   },
   created () { }
 }
