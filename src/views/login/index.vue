@@ -6,7 +6,7 @@
     <span id="voice"></span>
     <div class="login_container">
       <el-form :label-position="labelPosition" :rules="rules" label-width="100px" :model="form">
-        <el-form-item v-if="isloginPage" label="用户名" prop="username">
+        <el-form-item label="用户名" prop="username">
           <el-input v-model="form.username" placeholder="请输入用户名"></el-input>
         </el-form-item>
         <el-form-item v-if="!isloginPage" label="邮箱" prop="email">
@@ -19,9 +19,11 @@
         <el-form-item v-if="isloginPage" class="tc">
           <el-button class="submit_btn" size="large" type="primary" @click="handleLogin">登录</el-button>
         </el-form-item>
+        <el-form-item v-if="isloginPage" style="color:#fff">没账号？去<router-link :to="{name: '/register'}"><span style="fontSize:16px">注册</span></router-link>一个吧</el-form-item>
         <el-form-item v-else class="tc">
-          <el-button class="submit_btn" size="large" type="primary" @click="handleSignup">注册</el-button>
+          <el-button class="submit_btn" size="large" type="primary" @click="handleRegister">注册</el-button>
         </el-form-item>
+        <el-form-item v-if="!isloginPage" style="color:#fff">已有账号？去<router-link :to="{name: '/login'}"><span style="fontSize:16px">登录</span></router-link></el-form-item>
       </el-form>
     </div>
   </div>
@@ -50,12 +52,19 @@
         }
       };
     },
-    created () {
-      if (this.$route.meta.title === '登录') {
-        this.isloginPage = true
-      } else {
-        this.isloginPage = false
+    watch: {
+      '$route.path': function (newVal) {
+        if (newVal === '/login') {
+          console.log('欢迎进入登录页面')
+          this.isloginPage = true
+        }
+        if (newVal === '/register') {
+          console.log('欢迎进入注册页面')
+          this.isloginPage = false
+        }
       }
+    },
+    created () {
     },
     mounted () {
       this.$nextTick(() => {
@@ -69,7 +78,11 @@
       })
     },
     methods: {
-      handleSignup () {
+      handleRegister () {
+        this.$store.dispatch('login/register', this.form).then(res => {
+          console.log(res)
+          this.$router.push({ name: '/login' })
+        })
       },
       handleLogin () {
         this.$store.dispatch('login/login', this.form).then(res => {

@@ -1,4 +1,5 @@
 import { login } from '@/api/login'
+import { addUser } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/cookies'
 
 const user = {
@@ -27,6 +28,17 @@ const user = {
           commit('setUserInfo', res.data.user)
           resolve(res.data)
           
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    },
+    // 登录
+    // eslint-disable-next-line no-unused-vars
+    register ( { commit }, loginForm) {
+      return new Promise((resolve, reject) => {
+        addUser(loginForm).then(res => {
+          resolve(res)
         }).catch(error => {
           reject(error)
         })

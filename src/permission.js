@@ -5,15 +5,15 @@ import router from './router'
 import { getToken } from '@/utils/cookies'
 
 router.beforeEach((to, from, next) => {
-  if (getToken()) { 
-    debugger
+  if (getToken()) {
     if (to.path === '/login') {
       next({ path: '/' })
     } else {
       next()
     }
   } else {
-    if (to.path === '/login') {
+    const arr = ['/login', '/register']
+    if (arr.includes(to.path)) {
       next()
     } else {
       next('/login')

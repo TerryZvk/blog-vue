@@ -23,13 +23,15 @@ export default new Router({
         },
         {
             path: '/login',
+            name: '/login',
             component: () => import(/*webpackChunkName:"name"*/'@/views/login'),
             meta: {
                 title: '登录'
             }
         },
         {
-            path: '/signup',
+            path: '/register',
+            name: '/register',
             component: () => import(/*webpackChunkName:"name"*/'@/views/login'),
             meta: {
                 title: '注册'
