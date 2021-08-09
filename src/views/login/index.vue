@@ -34,6 +34,7 @@
       return {
         labelPosition: 'right',
         isloginPage: true,
+        muted: false,
         form: {
           username: undefined,
           email: undefined,
@@ -71,7 +72,7 @@
         let voiceBtn = document.getElementById('voice')
         let video = document.getElementById('video')
         voiceBtn.addEventListener('click', function() {
-          video.muted = false
+          video.muted = !video.muted
         })
         document.querySelectorAll('input').forEach((item)=> {item.style='background:transparent;color:#fff'})
         document.querySelectorAll('.el-form-item__label').forEach((item)=> {item.style.color='#fff'})
@@ -107,6 +108,9 @@
   button, .el-input input {
     background: transparent;
   }
+  /deep/ .el-input__inner{
+    background: transparent;
+  }
   .el-form-item__label{
     color: #fff;
   }
@@ -120,11 +124,7 @@
     min-width: 100%;  
     min-height: 100%;  
     height: auto;  
-    width: auto;  
-    /*加滤镜*/
-    /*filter: blur(15px); //背景模糊设置 */
-    /*-webkit-filter: grayscale(100%);*/  
-    /*filter:grayscale(100%); //背景灰度设置*/  
+    width: auto;
     z-index:-11       
   }  
   source{  

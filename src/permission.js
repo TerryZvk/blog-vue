@@ -1,10 +1,9 @@
-/* eslint-disable no-debugger */
 import router from './router'
-// import store from './store'
-// import { Loading } from 'element-ui'
 import { getToken } from '@/utils/cookies'
 
+let whiteList = ['/login', '/register']
 router.beforeEach((to, from, next) => {
+  // 已登录
   if (getToken()) {
     if (to.path === '/login') {
       next({ path: '/' })
@@ -12,8 +11,7 @@ router.beforeEach((to, from, next) => {
       next()
     }
   } else {
-    const arr = ['/login', '/register']
-    if (arr.includes(to.path)) {
+    if (whiteList.includes(to.path)) {
       next()
     } else {
       next('/login')
