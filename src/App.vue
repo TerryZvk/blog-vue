@@ -30,8 +30,14 @@ export default {
 // @tcolors:#97dffd;//按钮和标签颜色
 // @tcolorm:#64609E;//分类的选中的颜色
 // @tcolord:#48456D;//按钮hover 的颜色
+@font-face {
+  font-family: 'lifeisstrange';
+  src: url('./assets/fonts/lifeisstrange.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 body {
-  font-family: Arial, 'STHeiti', Helvetica, sans-serif;
+  font-family: 'lifeisstrange'!important;
   background: #efefef;
   font-size: 14px;
   color: #444 !important;
@@ -42,7 +48,7 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'lifeisstrange'!important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;

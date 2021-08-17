@@ -110,11 +110,9 @@
   }
   /deep/ .el-input__inner{
     background: transparent;
+    font-family: 'lifeisstrange'!important;
   }
-  .el-form-item__label{
-    color: #fff;
-  }
-  .el-form-item__label{
+  /deep/ .el-form-item__label{
     color: #fff;
   }
   video{  
@@ -139,5 +137,8 @@
     margin: auto;
     width: 500px;
     margin-right: 38vh;
+  }
+  .submit_btn{
+    font-family: 'lifeisstrange'!important;
   }
 </style>
