@@ -1,7 +1,7 @@
 <template>
   <div class="login-box">
     <video ref="video" id="video" autoplay loop muted>
-        <source src="http://qwrf3lzu4.hn-bkt.clouddn.com/bg.mp4" type="video/mp4"  />
+        <source src="https://f.video.weibocdn.com/w0oRB4q8lx07PkSnMKPm01041200onZ80E010.mp4?label=mp4_hd&template=640x360.25.0&trans_finger=62b30a3f061b162e421008955c73f536&media_id=4674580854538355&tp=8x8A3El:YTkl0eM8&us=0&ori=1&bf=4&ot=h&ps=3lckmu&uid=2QZhI4&ab=3915-g1,5178-g1,966-g1,1493-g0,1192-g0,1191-g0,1258-g0,3601-g15&Expires=1629998260&ssig=bXWnUV7Zvz&KID=unistore,video" type="video/mp4"  />
     </video>
     <span id="voice"></span>
     <div class="login_container">
