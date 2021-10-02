@@ -5,15 +5,21 @@
     </video>
     <span id="voice"></span>
     <div class="login_container">
-      <el-form :label-position="labelPosition" :rules="rules" label-width="100px" :model="form">
-        <el-form-item label="用户名" prop="username">
+      <el-form ref="form" :label-position="labelPosition" :rules="rules" label-width="100px" :model="form">
+        <el-form-item v-if="!isloginPage" label="用户名" prop="username">
           <el-input v-model="form.username" placeholder="请输入用户名"></el-input>
         </el-form-item>
-        <el-form-item v-if="!isloginPage" label="邮箱" prop="email">
+        <el-form-item  label="邮箱" prop="email">
           <el-input v-model="form.email" placeholder="请输入邮箱"></el-input>
         </el-form-item>
-        <el-form-item label="密码" prop="password">
+        <el-form-item label="密码"  v-if="isloginPage" prop="password">
           <el-input type="password" v-model="form.password" placeholder="请输入密码"></el-input>
+        </el-form-item>
+        <el-form-item label="密码"  v-if="!isloginPage" prop="password1">
+          <el-input type="password" v-model="form.password1" placeholder="请输入密码"></el-input>
+        </el-form-item>
+        <el-form-item label="确认密码" v-if="!isloginPage" prop="password2">
+          <el-input type="password"  v-model="form.password2" placeholder="请输入密码"></el-input>
         </el-form-item>
 
         <el-form-item v-if="isloginPage" class="tc">
@@ -38,7 +44,9 @@
         form: {
           username: undefined,
           email: undefined,
-          password: undefined
+          password: undefined,
+          password1: undefined,
+          password2: undefined
         },
         rules: {
           username: [
@@ -49,6 +57,12 @@
           ],
           password: [
             { required: true, message: '密码不能为空', trigger: 'blur'},
+          ],
+          password1: [
+            { required: true, message: '密码不能为空', trigger: 'blur'},
+          ],
+          password2: [
+            { required: true, message: '确认密码不能为空', trigger: 'blur'},
           ]
         }
       };
@@ -80,15 +94,29 @@
     },
     methods: {
       handleRegister () {
-        this.$store.dispatch('login/register', this.form).then(res => {
-          console.log(res)
-          this.$router.push({ name: '/login' })
+        this.$refs.form.validate((valid) => {
+          if (valid) {
+            this.$store.dispatch('login/register', this.form).then(res => {
+              console.log(res)
+              this.$router.push({ name: '/login' })
+            })
+          } else {
+            console.log('error submit!!');
+            return false
+          }
         })
       },
       handleLogin () {
-        this.$store.dispatch('login/login', this.form).then(res => {
-          console.log(res)
-          this.$router.push({ path: '/', replace: true })
+        this.$refs.form.validate((valid) => {
+          if (valid) {
+            this.$store.dispatch('login/login', this.form).then(res => {
+              console.log(res)
+              this.$router.push({ path: '/', replace: true })
+            })
+          } else {
+            console.log('error submit!!');
+            return false
+          }
         })
       }
     }

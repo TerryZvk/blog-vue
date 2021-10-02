@@ -58,7 +58,7 @@ export default {
       if (type === '1') {
         this.$router.push({ path: '/login' })
       } else {
-         this.$router.push({ path: '/signup' })
+         this.$router.push({ path: '/register' })
       }
     },
     userlogout () {

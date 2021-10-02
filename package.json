@@ -12,6 +12,7 @@
     "babel-plugin-component": "^1.1.1",
     "core-js": "^3.6.4",
     "element-ui": "^2.13.2",
+    "js-base64": "^3.7.2",
     "js-cookie": "^2.2.1",
     "mockjs": "^1.1.0",
     "vue": "^2.6.11",

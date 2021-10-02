@@ -24,8 +24,8 @@ const user = {
     login ({ commit }, loginForm) {
       return new Promise((resolve, reject) => {
         login(loginForm).then(res => {
-          commit('setToken', res.data.auth_token)
-          commit('setUserInfo', res.data.user)
+          commit('setToken', res.data.token)
+          commit('setUserInfo', res.data)
           resolve(res.data)
           
         }).catch(error => {
